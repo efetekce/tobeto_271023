@@ -6,9 +6,24 @@ class Program
     {
         //InterfaceIntro();
 
+        //Demo();
+
+        ICustomerDal[] customerDals = new ICustomerDal[2]
+        {
+            new SqlServerCustomerDal(),
+            new OracleCustomerDal()
+        };
+
+        foreach (var customerDal in customerDals)
+        {
+            customerDal.Add();
+        }
+    }
+
+    private static void Demo()
+    {
         CustomerManager customerManager = new CustomerManager();
         customerManager.Add(new OracleCustomerDal());
-
     }
 
     private static void InterfaceIntro()
