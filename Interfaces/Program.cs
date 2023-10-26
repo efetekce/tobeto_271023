@@ -4,6 +4,15 @@ class Program
 {
     static void Main(string[] args)
     {
+        //InterfaceIntro();
+
+        CustomerManager customerManager = new CustomerManager();
+        customerManager.Add(new OracleCustomerDal());
+
+    }
+
+    private static void InterfaceIntro()
+    {
         Manager manager = new Manager();
         Customer customer = new Customer { Id = 1, FirstName = "Efe", LastName = "Tekce", Address = "Istanbul" };
         manager.Add(customer);
