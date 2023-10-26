@@ -4,29 +4,48 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        Manager manager = new Manager();
+        Customer customer = new Customer { Id = 1, FirstName = "Efe", LastName = "Tekce", Address = "Istanbul" };
+        manager.Add(customer);
+        manager.Add(new Student() { Id = 2, FirstName = "ABC", Department = "HR" });
+        manager.Add(new Worker());
     }
 }
 
 interface IPerson
 {
     int Id { get; set; }
-    int FirstName { get; set; }
-    int LastName { get; set; }
+    string FirstName { get; set; }
+    string LastName { get; set; }
+}
+
+class Customer : IPerson
+{
+    public int Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string Address { get; set; }
 }
 
 class Student : IPerson
 {
     public int Id { get; set; }
-    public int FirstName { get; set; }
-    public int LastName { get; set; }
-    public string address { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string Department { get; set; }
 }
-
-class Instructor : IPerson
+class Worker : IPerson
 {
     public int Id { get; set; }
-    public int FirstName { get; set; }
-    public int LastName { get; set; }
-    public string department { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string Department { get; set; }
+}
+
+class Manager
+{
+    public void Add(IPerson person)
+    {
+        Console.WriteLine(person.FirstName);
+    }
 }

@@ -12,10 +12,10 @@ class Program
         productManager.Update();
 
 
-        Customer customer = new Customer();
-        customer.City = "Istanbul";
-        customer.FirstName = "Efe";
-        customer.LastName = "Tekce";
+        Customer myCustomer = new Customer();
+        myCustomer.City = "Istanbul";
+        myCustomer.FirstName = "Efe";
+        myCustomer.LastName = "Tekce";
         // when we're assigning values to properties, set method will work.
         Customer customer2 = new Customer
         {
