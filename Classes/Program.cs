@@ -10,6 +10,22 @@ class Program
         ProductManager productManager = new ProductManager();
         productManager.Add();
         productManager.Update();
+
+
+        Customer customer = new Customer();
+        customer.City = "Istanbul";
+        customer.FirstName = "Efe";
+        customer.LastName = "Tekce";
+        // when we're assigning values to properties, set method will work.
+        Customer customer2 = new Customer
+        {
+            Id = 2,
+            City = "Ankara",
+            FirstName = "Efe"
+        };
+
+        Console.WriteLine(customer2.FirstName);
+        // when we're reading values of properties as above, get method will work.
         Console.ReadLine();
     }
 }
